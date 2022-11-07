@@ -32,7 +32,15 @@ public class MainActivity extends AppCompatActivity {
         buttonDolar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                double valor = Double.parseDouble(editValor.getText().toString());
+
+                double valor;
+                try{
+                    valor = new Double(editValor.getText().toString());
+
+                }catch (NumberFormatException e){
+                    valor = 0;
+                }
+                /*double valor = Double.parseDouble(editValor.getText().toString());*/
                 double resultado = valor * 0.1989;
                 textResultado.setText("O valor em dolar é: " + resultado);
 
@@ -42,9 +50,18 @@ public class MainActivity extends AppCompatActivity {
         buttonEuro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                double valor = Double.parseDouble(editValor.getText().toString());
+
+                double valor;
+                try{
+                    valor = new Double(editValor.getText().toString());
+
+                }catch (NumberFormatException e){
+                    valor = 0;
+                }
+                /*double valor = Double.parseDouble(editValor.getText().toString());*/
                 double resultado = valor * 0.2001;
                 textResultado.setText("O valor em euro é: " + resultado);
+
 
             }
         });
@@ -52,7 +69,15 @@ public class MainActivity extends AppCompatActivity {
         buttonLibra.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                double valor = Double.parseDouble(editValor.getText().toString());
+
+                double valor;
+                try{
+                    valor = new Double(editValor.getText().toString());
+
+                }catch (NumberFormatException e){
+                    valor = 0;
+                }
+                /*double valor = Double.parseDouble(editValor.getText().toString());*/
                 double resultado = valor * 0.1751;
                 textResultado.setText("O valor em libra é: " + resultado);
             }

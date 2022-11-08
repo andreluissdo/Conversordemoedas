@@ -13,70 +13,26 @@
         android:layout_width="248dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="40dp"
         android:ems="10"
         android:hint="Digite o valor a ser convertido"
         android:inputType="number|textPersonName|numberDecimal"
+        android:textColor="#8C8888"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Selecione uma moeda abaixo:"
-        android:textAlignment="viewStart"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editValores" />
-
-    <Button
-        android:id="@+id/buttonLibra"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:backgroundTint="#3DDB83"
-        android:text="Libra"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <Button
-        android:id="@+id/buttonEuro"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:backgroundTint="#3DDB83"
-        android:text="Euro"
-        app:layout_constraintStart_toEndOf="@+id/buttonLibra"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <Button
-        android:id="@+id/buttonDolar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="8dp"
-        android:backgroundTint="#3DDB83"
-        android:text="Dolar"
-        app:layout_constraintStart_toEndOf="@+id/buttonEuro"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <TextView
         android:id="@+id/textResultado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="16dp"
         android:text="Resultado:"
+        android:textColor="#8C8888"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonEuro" />
+        app:layout_constraintTop_toBottomOf="@+id/menu" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -88,5 +44,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_launcher_background" />
+
+    <Spinner
+        android:id="@+id/menu"
+        android:layout_width="358dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/editValores"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="8dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

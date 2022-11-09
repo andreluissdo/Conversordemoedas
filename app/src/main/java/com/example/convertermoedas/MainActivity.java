@@ -31,9 +31,6 @@ public class MainActivity extends AppCompatActivity {
 
         editValor = findViewById(R.id.editValores);
         textResultado = findViewById(R.id.textResultado);
-        /*buttonDolar = findViewById(R.id.buttonDolar);
-        buttonEuro = findViewById(R.id.buttonEuro);
-        buttonLibra = findViewById(R.id.buttonLibra);*/
         menu = findViewById(R.id.menu);
         
 
@@ -43,114 +40,60 @@ public class MainActivity extends AppCompatActivity {
         
         menu.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
+
+            /*Segue abaixo código para selecionar uma das opções do spinner e atribuir funções a elas
+            * Obs.: Foi usado o método switch/case para inserir novas moedas para conversão posteriormente*/
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
 
-                if(opcoes[position] == "Dolar"){
-                double valor;
-                try{
-                    valor = new Double(editValor.getText().toString());
+                switch (position){
+                    case 0:
+                        textResultado.setText("Resultado: ");
+                    break;
 
-                }catch (NumberFormatException e){
-                    valor = 0;
+                    case 1:
+                        double valor;
+                        double resultado;
+                        try{
+                            valor = new Double(editValor.getText().toString());
+
+                        }catch (NumberFormatException e){
+                            valor = 0;
+                        }
+
+                        resultado = valor * 0.1989;
+                        textResultado.setText("Resultado: " + resultado);
+                    break;
+
+                    case 2:
+
+                        try{
+                            valor = new Double(editValor.getText().toString());
+
+                        }catch (NumberFormatException e){
+                            valor = 0;
+                        }
+
+                        resultado = valor * 0.2001;
+                        textResultado.setText("Resultado: " + resultado);
+                    break;
+
+                    case 3:
+                        try{
+                            valor = new Double(editValor.getText().toString());
+
+                        }catch (NumberFormatException e){
+                            valor = 0;
+                        }
+
+                        resultado = valor * 0.1751;
+                        textResultado.setText("Resultado: " + resultado);
                 }
-
-                double resultado = valor * 0.1989;
-                textResultado.setText("Resultado: " + resultado);
-
-                }else if(opcoes[position] == "Euro"){
-                    double valor;
-                    try{
-                        valor = new Double(editValor.getText().toString());
-
-                    }catch (NumberFormatException e){
-                        valor = 0;
-                    }
-
-                    double resultado = valor * 0.2001;
-                    textResultado.setText("Resultado: " + resultado);
-
-                }else if(opcoes[position] == "Libra"){
-                    double valor;
-                    try{
-                        valor = new Double(editValor.getText().toString());
-
-                    }catch (NumberFormatException e){
-                        valor = 0;
-                    }
-
-                    double resultado = valor * 0.1751;
-                    textResultado.setText("Resultado: " + resultado);
-
-                }else{
-                    textResultado.setText("Resultado: ");
-                }
-
-
             }
-
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
-
-
             }
         });
-
-        /*Para calcular o dolar*/
-        /*buttonDolar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                double valor;
-                try{
-                    valor = new Double(editValor.getText().toString());
-
-                }catch (NumberFormatException e){
-                    valor = 0;
-                }
-
-                double resultado = valor * 0.1989;
-                textResultado.setText("O valor em dolar é: " + resultado);
-
-            }
-        });*/
-        /*Para calcular euro*/
-        /*buttonEuro.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                double valor;
-                try{
-                    valor = new Double(editValor.getText().toString());
-
-                }catch (NumberFormatException e){
-                    valor = 0;
-                }
-
-                double resultado = valor * 0.2001;
-                textResultado.setText("O valor em euro é: " + resultado);
-
-
-            }
-        });*/
-        /*Para calcular Libra*/
-        /*buttonLibra.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                double valor;
-                try{
-                    valor = new Double(editValor.getText().toString());
-
-                }catch (NumberFormatException e){
-                    valor = 0;
-                }
-
-                double resultado = valor * 0.1751;
-                textResultado.setText("O valor em libra é: " + resultado);
-            }
-        });*/
-
 
     }
 

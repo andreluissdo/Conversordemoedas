@@ -5,53 +5,58 @@
     android:id="@+id/linearLayout1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:backgroundTint="#3DDB83"
+    android:background="@drawable/fundomoedas"
+    android:hapticFeedbackEnabled="false"
     tools:context=".MainActivity">
 
     <EditText
         android:id="@+id/editValores"
-        android:layout_width="248dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="40dp"
+        android:layout_width="249dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="Digite o valor a ser convertido"
         android:inputType="number|textPersonName|numberDecimal"
-        android:textColor="#8C8888"
+        android:textColor="#742EC4"
+        android:textColorHint="#742EC4"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textResultado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="20dp"
         android:text="Resultado:"
-        android:textColor="#8C8888"
+        android:textColor="#742EC4"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/menu" />
 
+    <Spinner
+        android:id="@+id/menu"
+        android:layout_width="308dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editValores"
+        tools:ignore="MissingConstraints" />
+
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="418dp"
-        android:layout_height="137dp"
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_launcher_background" />
-
-    <Spinner
-        android:id="@+id/menu"
-        android:layout_width="358dp"
-        android:layout_height="37dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@+id/editValores"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="8dp" />
+        app:srcCompat="@drawable/logomoedas" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

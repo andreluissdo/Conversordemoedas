@@ -14,13 +14,19 @@ import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.Scanner;
+
 public class MainActivity extends AppCompatActivity {
 
     private EditText editValor;
     private TextView textResultado;
-    /*private Button buttonDolar, buttonEuro, buttonLibra;*/
     private Spinner menu;
-    String [] opcoes = {"Selecione uma moeda:","Dolar", "Euro", "Libra"};
+    String [] opcoes = {"Selecione uma moeda:","Dolar", "Euro", "Libra", "Peso argentino"};
+
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -37,15 +43,16 @@ public class MainActivity extends AppCompatActivity {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>
                 (getApplicationContext(), R.layout.spinner_item, opcoes);
         menu.setAdapter(adapter);
-        
         menu.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-
 
             /*Segue abaixo código para selecionar uma das opções do spinner e atribuir funções a elas
             * Obs.: Foi usado o método switch/case para inserir novas moedas para conversão posteriormente*/
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
 
+
+
+                /*início dos métodos para funcionamento dos itens no spinner*/
                 switch (position){
                     case 0:
                         textResultado.setText("Resultado: ");
@@ -88,6 +95,19 @@ public class MainActivity extends AppCompatActivity {
 
                         resultado = valor * 0.1751;
                         textResultado.setText("Resultado: " + resultado);
+                    break;
+
+                    case 4:
+                        try{
+                            valor = new Double(editValor.getText().toString());
+
+                        }catch (NumberFormatException e){
+                            valor = 0;
+                        }
+
+                        resultado = valor * 0.034;
+                        textResultado.setText("Resultado: " + resultado);
+                        break;
                 }
             }
             @Override
